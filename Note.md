@@ -1,5 +1,35 @@
 # Hướng dẫn xây dựng Frontend cho mô hình nhận dạng chữ số
 
+## Chạy project
+
+Không mở trực tiếp `Frontend/idex.html` bằng `file://`: trình duyệt không tự khởi động được Python backend.
+
+Cách chạy một click trên Windows: double-click `run_project.bat` ở thư mục gốc project. File này khởi động `server.py` và mở:
+
+```text
+http://127.0.0.1:8000/idex.html
+```
+
+Cách chạy bằng terminal:
+
+```bash
+cd /d D:\AL_HK3
+py -3.13 server.py
+```
+
+Sau đó mở URL trên. Dừng server bằng `Ctrl+C` trong cửa sổ server.
+
+
+
+Dataset được lưu trong `Model/Dataset.zip` bằng Git LFS. Sau khi clone, chạy:
+
+```bash
+git lfs pull
+py -3.13 setup_dataset.py
+```
+
+Nếu máy dùng lệnh `python`, có thể chạy `python setup_dataset.py`. Script chỉ giải nén khi `Model/Dataset/` chưa tồn tại.
+
 ## 1. Mục tiêu
 
 Frontend cho phép người dùng viết một chữ số từ `0` đến `9`, gửi đúng một ảnh sang tầng inference và hiển thị kết quả dự đoán.
